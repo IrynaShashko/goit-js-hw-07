@@ -29,7 +29,7 @@ function onImageContainerClick(evt) {
     evt.preventDefault();
     evt.target.src = evt.target.dataset.source;
     const instance = basicLightbox.create(`
-    <img src="${evt.target.src = evt.target.dataset.source}" width="1000" height="800">
+    <img src="${evt.target.src = evt.target.dataset.source}" width="1100" height="900">
 `)
 instance.show()
 }

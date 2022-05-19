@@ -3,7 +3,9 @@ import { galleryItems } from './gallery-items.js';
 
 const imageContainer = document.querySelector(".gallery");
 const cardsMarkup = createGalleryItems(galleryItems);
+
 imageContainer.insertAdjacentHTML("beforeend", cardsMarkup);
+
 
 function createGalleryItems(galleryItems) {
     return galleryItems.map(({ preview, original, description }) => {
@@ -21,3 +23,12 @@ function createGalleryItems(galleryItems) {
      `
     }).join("");
 };
+
+
+    const gallery = new SimpleLightbox('.gallery a', { captionDelay: 250,});
+    imageContainer.addEventListener("click", gallery);
+    
+    console.log(gallery.target);
+
+
+
