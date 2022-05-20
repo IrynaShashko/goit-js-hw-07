@@ -11,7 +11,7 @@ function createGalleryItems(galleryItems) {
     return galleryItems.map(({ preview, original, description }) => {
         return `
     <div class="gallery__item">
-    <a class="gallery__link" href="large-image.jpg">
+    <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
       src="${preview}"
@@ -24,11 +24,9 @@ function createGalleryItems(galleryItems) {
     }).join("");
 };
 
-
-    const gallery = new SimpleLightbox('.gallery a', { captionDelay: 250,});
+    const gallery = new SimpleLightbox('.gallery a', { captionDelay: 250, captionsData: "alt"});
     imageContainer.addEventListener("click", gallery);
     
-    console.log(gallery.target);
 
 
 
